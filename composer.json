@@ -1,0 +1,42 @@
+{
+    "name" : "fab2s/strings",
+    "description" : "A purely static String Helper to handle more advanced utf8 string manipulations",
+    "type" : "library",
+    "authors" : [{
+        "name" : "Fabrice de Stefanis"
+    }],
+    "keywords" : [
+        "PHP",
+        "Simple",
+        "Strings",
+        "Helper",
+        "Utf8",
+        "utf-8",
+        "white-space",
+        "end-of-line",
+        "eol",
+        "normalize",
+        "constant-time-compare"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+        "php": ">=7.1",
+        "ext-mbstring": "*",
+        "fab2s/utf8": "@dev"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "~7.0|~8.0"
+    },
+    "autoload": {
+        "classmap": [
+          "src"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "fab2s\\Tests\\": "tests/"
+        }
+    }
+}
