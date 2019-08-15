@@ -24,7 +24,8 @@
     "require" : {
         "php": ">=7.1",
         "ext-mbstring": "*",
-        "fab2s/utf8": "@dev"
+        "fab2s/utf8": "@dev",
+        "fab2s/bom": "@dev"
     },
     "require-dev": {
       "phpunit/phpunit": "~7.0|~8.0"

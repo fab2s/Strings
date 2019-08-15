@@ -9,6 +9,7 @@
 
 namespace fab2s\Strings;
 
+use fab2s\Bom\Bom;
 use fab2s\Utf8\Utf8;
 
 /**
