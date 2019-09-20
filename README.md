@@ -25,69 +25,69 @@ As it requires `Utf8`, `Strings` requires [mb_string](https://php.net/mb_string)
 `Strings` implement some basic text manipulation function that can be pretty useful IRL
 
 
-### `filter(string $string):string` 
+- `filter(string $string):string` 
 
-Drops Zero Width white chars, normalizes EOL and Normalize UTF8 if [ext-intl](https://php.net/intl) is available
+    Drops Zero Width white chars, normalizes EOL and Normalize UTF8 if [ext-intl](https://php.net/intl) is available
 
-### `singleWsIze(string $string, bool $normalize = false, bool $includeTabs = true):string` 
+- `singleWsIze(string $string, bool $normalize = false, bool $includeTabs = true):string` 
 
-Replace repeated white-spaces to a single one, preserve original white-spaces unless normalized (every white-spaces to ' '), with or without tabs (\t)
+    Replace repeated white-spaces to a single one, preserve original white-spaces unless normalized (every white-spaces to ' '), with or without tabs (\t)
 
-### `singleLineIze(string $string):string` 
+- `singleLineIze(string $string):string` 
 
-Make string fit in one line by replacing EOLs and white-spaces to normalized single white-spaces
+    Make string fit in one line by replacing EOLs and white-spaces to normalized single white-spaces
 
-### `dropZwWs(string $string):string` 
+- `dropZwWs(string $string):string` 
 
-Remove Zero Width white-spaces 
+    Remove Zero Width white-spaces 
 
-### `normalizeWs(string $string, bool $includeTabs = true, int $maxConsecutive = null):string` 
+- `normalizeWs(string $string, bool $includeTabs = true, int $maxConsecutive = null):string` 
 
-Normalize white-spaces to a single ` ` by default, include tabs by default
+    Normalize white-spaces to a single ` ` by default, include tabs by default
 
-### `normalizeEol($string, $maxConsecutive = null, $eol = null):string` 
+- `normalizeEol($string, $maxConsecutive = null, $eol = null):string` 
 
-Normalize EOLs to a single LF by default
+    Normalize EOLs to a single LF by default
 
-### `normalizeText(string $text):string` 
+- `normalizeText(string $text):string` 
 
-Return `trim`'d and `filter`'d $text 
+    Return `trim`'d and `filter`'d $text 
 
-### `normalizeTitle(string $title):string` 
+- `normalizeTitle(string $title):string` 
 
-Return `singleLineIze`'d and `normalizeText`'d $title
+    Return `singleLineIze`'d and `normalizeText`'d $title
 
-### `normalizeName(string $name):string` 
+- `normalizeName(string $name):string` 
 
-Return `ucword`'d and `normalizeTitle`'d $name (`"john \n\t doe  "` -> `"John Doe"`) 
+    Return `ucword`'d and `normalizeTitle`'d $name (`"john \n\t doe  "` -> `"John Doe"`) 
 
-### `escape(string $string, int $flag = ENT_COMPAT, bool $hardEscape = true):string` 
+- `escape(string $string, int $flag = ENT_COMPAT, bool $hardEscape = true):string` 
 
-[htmlspecialchars()](https://php.net/htmlspecialchars) wrapper with UTF8 set as encoding
+    [htmlspecialchars()](https://php.net/htmlspecialchars) wrapper with UTF8 set as encoding
 
-### `softEscape(string $string, int $flag = ENT_COMPAT):string` 
+- `softEscape(string $string, int $flag = ENT_COMPAT):string` 
 
-Shortcut for `escape(string $string, $flag, true)`
+    Shortcut for `escape(string $string, $flag, true)`
 
-### `unEscape(string $string, int $quoteStyle = ENT_COMPAT):string` 
+- `unEscape(string $string, int $quoteStyle = ENT_COMPAT):string` 
 
-[htmlspecialchars_decode()](https://php.net/htmlspecialchars_decode) wrapper 
+    [htmlspecialchars_decode()](https://php.net/htmlspecialchars_decode) wrapper 
 
-### `convert(string $string, string $from = null, string $to = self::ENCODING):string` 
+- `convert(string $string, string $from = null, string $to = self::ENCODING):string` 
 
-Convert encoding to UTF8 by default. Basic $from encoding detection using `Strings::detectEncoding()`
+    Convert encoding to UTF8 by default. Basic $from encoding detection using `Strings::detectEncoding()`
 
-### `detectEncoding(string $string):string|null` 
+- `detectEncoding(string $string):string|null` 
 
-Detect encoding by checking `Utf8::isUf8()`, then trying with BOMs and ultimately fall back to [mb_detect_encoding()](https://php.net/mb_detect_encoding) with limited charsets first, then more internally in [mb_convert_encoding()](https://php.net/mb_convert_encoding) 
+    Detect encoding by checking `Utf8::isUf8()`, then trying with BOMs and ultimately fall back to [mb_detect_encoding()](https://php.net/mb_detect_encoding) with limited charsets first, then more internally in [mb_convert_encoding()](https://php.net/mb_convert_encoding) 
 
-### `secureCompare(string $test, string $reference):bool` 
+- `secureCompare(string $test, string $reference):bool` 
 
-Perform a [Timing Attack](https://en.wikipedia.org/wiki/Timing_attack) safe string comparison (Truly constant operations comparison)
+    Perform a [Timing Attack](https://en.wikipedia.org/wiki/Timing_attack) safe string comparison (Truly constant operations comparison)
 
-### `contentHash(string $content):string` 
+- `contentHash(string $content):string` 
 
-Return a `sha256` hash of the $content prefixed with $content length. Indented to quickly and reliably detect $content updates.
+    Return a `sha256` hash of the $content prefixed with $content length. Indented to quickly and reliably detect $content updates.
 
 ## Requirements
 
