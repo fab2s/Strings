@@ -55,7 +55,7 @@ As it requires `Utf8`, `Strings` requires [mb_string](https://php.net/mb_string)
 
 - `normalizeTitle(string $title):string` 
 
-    Return `singleLineIze`'d and `normalizeText`'d $title
+    Return `singleLineIze`'d, `normalizeWs`'d, `normalizeText`'d and `ucfirst`'d $title (`" the best ever \t\r\n article"` -> `"The best ever article"`) 
 
 - `normalizeName(string $name):string` 
 
