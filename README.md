@@ -45,7 +45,7 @@ As it requires `Utf8`, `Strings` requires [mb_string](https://php.net/mb_string)
 
     Normalize white-spaces to a single ` ` by default, include tabs by default
 
-- `normalizeEol($string, $maxConsecutive = null, $eol = null):string` 
+- `normalizeEol($string, $maxConsecutive = null, $eol = self::EOL):string` 
 
     Normalize EOLs to a single LF by default
 
