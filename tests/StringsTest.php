@@ -150,22 +150,22 @@ class StringsTest extends \PHPUnit\Framework\TestCase
     {
         return [
             [
-                'input'          => "this is\r\r\none text \n\f\nwith" . json_decode('"\u2028"') . json_decode('"\u2029"') . "tons of ws \f\tand LF's \r\nevery" . json_decode('"\u000B"') . 'where',
+                'input'          => "this is\r\r\none text \n \f \n \n with" . json_decode('"\u2028"') . json_decode('"\u2029"') . "tons of ws \f\tand LF's \r\nevery" . json_decode('"\u000B"') . 'where',
                 'maxConsecutive' => null,
                 'eol'            => "\n",
-                'expected'       => "this is\n\none text\n\n\nwith\n\ntons of ws\n\tand LF's\nevery\nwhere",
+                'expected'       => "this is\n\none text\n\n\n\n with\n\ntons of ws\n\tand LF's\nevery\nwhere",
             ],
             [
-                'input'          => "this is\r\r\none eol text \n\f\nwith" . json_decode('"\u2028"') . json_decode('"\u2029"') . "tons of ws \f\tand LF's \r\nevery" . json_decode('"\u000B"') . 'where',
+                'input'          => "this is\r\r\none eol text \n  \f \n \n with" . json_decode('"\u2028"') . json_decode('"\u2029"') . "tons of ws \f\tand LF's \r\nevery" . json_decode('"\u000B"') . 'where',
                 'maxConsecutive' => 1,
                 'eol'            => "\n",
-                'expected'       => "this is\none eol text\nwith\ntons of ws\n\tand LF's\nevery\nwhere",
+                'expected'       => "this is\none eol text\n with\ntons of ws\n\tand LF's\nevery\nwhere",
             ],
             [
-                'input'          => "this is\r\r\n\rone text \n\r\n\nwith" . json_decode('"\u2028"') . json_decode('"\u2029"') . "tons of ws \f\tand LF's \r\nevery" . json_decode('"\u000B"') . 'where',
+                'input'          => "this is\r\r\n\rone text \n \f \n  \n with" . json_decode('"\u2028"') . json_decode('"\u2029"') . "tons of ws \f\tand LF's \r\nevery" . json_decode('"\u000B"') . 'where',
                 'maxConsecutive' => 2,
                 'eol'            => "\n",
-                'expected'       => "this is\n\none text\n\nwith\n\ntons of ws\n\tand LF's\nevery\nwhere",
+                'expected'       => "this is\n\none text\n\n with\n\ntons of ws\n\tand LF's\nevery\nwhere",
             ],
         ];
     }
