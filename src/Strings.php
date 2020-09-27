@@ -93,7 +93,7 @@ class Strings
      */
     public static function singleLineIze(string $string): string
     {
-        return preg_replace("`\R+`u", ' ', $string);
+        return preg_replace("`\s*\R+`u", ' ', $string);
     }
 
     /**
@@ -136,20 +136,19 @@ class Strings
      *
      * @return string
      */
-    public static function normalizeEol(string $string, ?int $maxConsecutive = null, ?string $eol = null): string
+    public static function normalizeEol(string $string, ?int $maxConsecutive = null, string $eol = self::EOL): string
     {
-        $eol = $eol ?: static::EOL;
         if ($maxConsecutive === null) {
-            return preg_replace('`\R`u', $eol, $string);
+            return preg_replace('`\s*?\R`u', $eol, $string);
         }
 
         if ($maxConsecutive === 1) {
-            return preg_replace('`\R+`u', $eol, $string);
+            return preg_replace('`\s*\R`u', $eol, $string);
         }
 
         return preg_replace([
             // start with normalizing with LF (faster than CRLF)
-            '`\R`u',
+            '`\s*?\R`u',
             // then remove high dupes
             "`\n{" . $maxConsecutive . ',}`u',
         ], [
