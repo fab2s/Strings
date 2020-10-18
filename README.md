@@ -1,6 +1,6 @@
 # Strings
 
-[![Build Status](https://travis-ci.org/fab2s/Strings.svg?branch=master)](https://travis-ci.org/fab2s/Strings) [![Latest Stable Version](https://poser.pugx.org/fab2s/strings/v/stable)](https://packagist.org/packages/fab2s/strings) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fab2s/strings/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fab2s/Strings/?branch=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![License](https://poser.pugx.org/fab2s/strings/license)](https://packagist.org/packages/fab2s/strings)
+[![Build Status](https://travis-ci.org/fab2s/Strings.svg?branch=master)](https://travis-ci.org/fab2s/Strings) [![Total Downloads](https://poser.pugx.org/fab2s/strings/downloads)](//packagist.org/packages/fab2s/strings) [![Monthly Downloads](https://poser.pugx.org/fab2s/strings/d/monthly)](//packagist.org/packages/fab2s/strings) [![Latest Stable Version](https://poser.pugx.org/fab2s/strings/v/stable)](https://packagist.org/packages/fab2s/strings) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fab2s/strings/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fab2s/Strings/?branch=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) [![License](https://poser.pugx.org/fab2s/strings/license)](https://packagist.org/packages/fab2s/strings)
 
 A purely static String Helper to handle more advanced utf8 string manipulations
 
@@ -91,7 +91,7 @@ As it requires `Utf8`, `Strings` requires [mb_string](https://php.net/mb_string)
 
 ## Requirements
 
-`Strings` is tested against php 7.1, 7.2 and 7.3.
+`Strings` is tested against php 7.1, 7.2, 7.3 and 7.4
 
 ## Contributing
 
