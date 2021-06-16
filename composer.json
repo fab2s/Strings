@@ -22,7 +22,7 @@
         "MIT"
     ],
     "require" : {
-        "php": ">=7.1",
+        "php": "^7.1|^8.0",
         "ext-mbstring": "*",
         "fab2s/utf8": "^1.0",
         "fab2s/bom": "^1.0"

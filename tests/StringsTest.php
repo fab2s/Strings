@@ -183,6 +183,12 @@ class StringsTest extends \PHPUnit\Framework\TestCase
                 'expected'       => "this is one text \nwith tons of ws and LF's \r\neverywhere",
             ],
             [
+                'input'          => "   this is                     one   text \nwith " . json_decode('"\u2009"') . json_decode('"\u2008"') . json_decode('"\u200A"') . "tons of ws \t\tand LF's \r\neverywhere     ",
+                'includeTabs'    => true,
+                'maxConsecutive' => 1,
+                'expected'       => " this is one text \nwith tons of ws and LF's \r\neverywhere ",
+            ],
+            [
                 'input'          => "this is     one more   text \nwith tons of ws \t\tand LF's \r\neverywhere",
                 'includeTabs'    => false,
                 'maxConsecutive' => 1,
@@ -209,6 +215,10 @@ class StringsTest extends \PHPUnit\Framework\TestCase
                 'expected' => "this is a text \nwith tons of ws \tand LF's \r\neverywhere",
             ],
             [
+                'input'    => "   this is   a      text \nwith tons of ws \t\tand LF's \r\neverywhere   ",
+                'expected' => " this is a text \nwith tons of ws \tand LF's \r\neverywhere ",
+            ],
+            [
                 'input'    => "this is a   text \f\nwith" . json_decode('"\u2009"') . json_decode('"\u2009"') . "tons of ws \t  \tand LF's \r\neverywhere",
                 'expected' => "this is a text \f\nwith" . json_decode('"\u2009"') . "tons of ws \t \tand LF's \r\neverywhere",
             ],
@@ -224,7 +234,7 @@ class StringsTest extends \PHPUnit\Framework\TestCase
             // input, expected
             ["this is a \x00text \n\nwith \rws \t\tand LF's \r\neverywh\0ere", "this is a text\n\nwith\nws \t\tand LF's\neverywhere"],
             ["this is another text \0\nwith \r\rws \t\tand LF's \r\neverywhere", "this is another text\nwith\n\nws \t\tand LF's\neverywhere"],
-            ['this is yet an' . json_decode('"\uFEFF"') . "other text \0\nwith \n\rws \t\tand LF's \r\nevery" . json_decode('"\u200B"') . 'where !!ù€@à!!', "this is yet another text\nwith\n\nws \t\tand LF's\neverywhere !!ù€@à!!"],
+            ['this is yet an' . json_decode('"\uFEFF"') . "other text \0\nwith \n\rws \t\tand LF's \r\nevery" . json_decode('"\u200B"') . 'where', "this is yet another text\nwith\n\nws \t\tand LF's\neverywhere"],
         ];
     }
 }
