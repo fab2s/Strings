@@ -91,7 +91,7 @@ As it requires `Utf8`, `Strings` requires [mb_string](https://php.net/mb_string)
 
 ## Requirements
 
-`Strings` is tested against php 7.2, 7.3, 7.4 and 8.0
+`Strings` is tested against php 7.2, 7.3, 7.4, 8.0 and 8.1
 
 ## Contributing
 
