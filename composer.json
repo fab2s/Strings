@@ -22,22 +22,23 @@
         "MIT"
     ],
     "require" : {
-        "php": "^7.1|^8.0",
+        "php": "^7.2|^8.0",
         "ext-mbstring": "*",
         "fab2s/utf8": "^1.0",
         "fab2s/bom": "^1.0"
     },
     "require-dev": {
-      "phpunit/phpunit": "~7.0|~8.0"
+        "phpunit/phpunit": "^9.0|^8.0|^7.0",
+        "friendsofphp/php-cs-fixer": "^3.0|^2.0"
     },
     "autoload": {
-        "classmap": [
-          "src"
-        ]
+        "psr-4": {
+            "fab2s\\Strings\\": "src"
+        }
     },
     "autoload-dev": {
         "psr-4": {
-            "fab2s\\Tests\\": "tests/"
+            "fab2s\\Strings\\Tests\\": "tests/"
         }
     },
     "scripts": {
